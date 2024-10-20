@@ -282,6 +282,7 @@ class POPOP:
         self.append_archive(parents)
 
         pool = parents.copy()
+        self.iters = 0
         for i in range(n_gen):
             if self.params["early_stop"] == 1:
                 found = np.array([p.is_adv for p in pool])
@@ -315,6 +316,7 @@ class POPOP:
 
             prev_conf = np.array([min([ind.f_score_list[idx] for ind in pool])
                                   for idx in range(len(self.params["boxes"]))])
+            self.iters += 1
 
             """
             select the lowest conf_score (with sign) among all individuals corresponding to each object, assign to prev_conf
