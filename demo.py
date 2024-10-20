@@ -31,7 +31,8 @@ if __name__ == "__main__":
     pm = st.sidebar.slider("Mutation rate:", 0.0, 1.0, 0.1, 0.1)
     pr0 = st.sidebar.slider("Probability of generating 0:", 0.1, 0.9, 0.3, 0.1)
     perturbation_range = st.sidebar.slider("Perturbations range:", 1.0, 3.0, 2.0, 0.5)
-    early_stop = st.sidebar.checkbox("Exhaust budget", True)
+    exhaust = st.sidebar.checkbox("Exhaust budget", False)
+    early_stop = not exhaust
     realtime_update = st.sidebar.checkbox("Update in realtime", True)
 
     img_file_buffer = st.file_uploader("Upload an image")
