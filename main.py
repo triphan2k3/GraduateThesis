@@ -1,5 +1,5 @@
 from LossFunction import UntargetedLoss
-from POPOP_ImportantPixels import POPOP
+from POPOP import POPOP
 from utils import NonOverLappingFilter, saveImg
 # from ImportantPixels import importantPixels
 
