@@ -120,8 +120,8 @@ if __name__ == '__main__':
 
         np.save(os.path.join(folder, 'result.npy'), result, allow_pickle = True)
 
-        saveImg(x_test, res.pos, res.values, params['boxes'], os.path.join(folder, 'BestAttackRes.jpg'))
-
+        saveImg(model, x_test, res.pos, res.values, params['boxes'], os.path.join(folder, 'BestAttackRes.jpg'))
+        
         cnt += 1
         if res.is_adv:
             success_cnt += 1

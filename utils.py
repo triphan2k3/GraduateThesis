@@ -38,6 +38,7 @@ def NonOverLappingFilter(boxes, cls):
 
 def saveImg(model, img, pos, values, boxes, path):
     perturbed_img = img.copy()
+
     for j, box in enumerate(boxes):
         w = abs(box[2] - box[0])
         h = abs(box[3] - box[1])
@@ -49,10 +50,5 @@ def saveImg(model, img, pos, values, boxes, path):
             perturbed_img[int(posH), int(posW)] += values[j][i]
 
     perturbed_img = np.clip(perturbed_img, 0, 1)
-
-    image = Image.fromarray((perturbed_img * 255).astype(np.uint8))
-    image.save("../saved.jpg")
-
-    results = model(["../saved.jpg"], verbose = False)
-    results[0].save(filename=path)
+    model.saveRes((perturbed_img * 255).astype(np.uint8), path)
 
