@@ -57,8 +57,6 @@ if __name__ == '__main__':
 
         x_test = np.array(image) / 255
 
-        x_test = np.array(image) / 255
-
         data = model(np.array(image))
         if len(data) == 0:
             continue
