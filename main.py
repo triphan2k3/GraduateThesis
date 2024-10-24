@@ -104,6 +104,8 @@ if __name__ == '__main__':
         res = attack.run(args.max_generations)
 
         result = {
+            'gt_boxes': boxes,
+            'gt_classes': cls,
             'loss': res.loss,
             'is_adv': res.is_adv,
             'pos': res.pos,
