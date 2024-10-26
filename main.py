@@ -51,9 +51,9 @@ if __name__ == '__main__':
         os.mkdir("results")
 
     for name in img_list[:len(img_list) // 2 + 1]:
-        folder = name.replace(name[-4:], "")
-        if not os.path.exists(os.path.join("results", folder)):
-            os.mkdir(os.path.join("results", folder))
+        folder = os.path.join("results", name.replace(name[-4:], ""))
+        if not os.path.exists(folder):
+            os.mkdir(folder)
 
         image = Image.open(os.path.join(PATH, name))
 
