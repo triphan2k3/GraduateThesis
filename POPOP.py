@@ -282,7 +282,7 @@ class POPOP:
         self.append_archive(parents)
 
         pool = parents.copy()
-        self.iters = 0
+        self.iters = 1
         for i in range(n_gen):
             if self.params["early_stop"] == 1:
                 found = np.array([p.is_adv for p in pool])
