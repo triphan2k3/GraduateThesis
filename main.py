@@ -26,7 +26,7 @@ if __name__ == '__main__':
     parser.add_argument("--pr0", type=float, default=0.3)
     parser.add_argument("--perturbation_range", type=float, default=2.0)
     parser.add_argument("--tournament_size", type=int, default=4)
-    parser.add_argument("--max_archive_size", type=int, default=1000)
+    parser.add_argument("--max_archive_size", type=int, default=10000)
     parser.add_argument("--elite_prob", type=float, default=0.5)
     parser.add_argument("--max_generations", type=int, default=50)
     parser.add_argument("--early_stop", type=int, default=1, help="0 or 1")
