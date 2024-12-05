@@ -282,6 +282,7 @@ class POPOP:
         self.append_archive(parents)
 
         pool = parents.copy()
+        self.log.append([ind.loss for ind in pool])
         prev_conf = np.array([min([ind.f_score_list[idx] for ind in pool])
                                   for idx in range(len(self.params["boxes"]))])
 
