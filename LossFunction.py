@@ -63,7 +63,8 @@ class UntargetedLoss:
                 f_score_list.append(max(f_score))
             f_score = np.mean(f_score)
 
-            L = IOU_score + 2 * f_score - prev_conf[idx] + 10 ** (-int(np.log10(3 * len(values[idx])))) * np.linalg.norm(values[idx].flatten(), ord = 0)
+            # L = IOU_score + 2 * f_score - prev_conf[idx] + 10 ** (-int(np.log10(3 * len(values[idx])))) * np.linalg.norm(values[idx].flatten(), ord = 0)
+            L = IOU_score + 2 * f_score - prev_conf[idx] + np.linalg.norm(values[idx].flatten(), ord = 0) / (3 * len(values[idx]))
             score_list.append(L)
             adver_list.append(adver)
         # if is_adver:
